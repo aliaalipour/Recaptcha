@@ -26,13 +26,13 @@ namespace Recaptch_ex.Controllers
         [HttpPost]
         public ActionResult Login(LoginViewModel model)
         {
-            
+
             if (RecaptchaWork(ref strmessage) == false)
             {
                 ModelState.AddModelError("", strmessage);
                 return View(model);
             }
-
+            model.Message = true;
             return View(model);
         }
         private bool RecaptchaWork(ref string strmessage)
@@ -42,7 +42,7 @@ namespace Recaptch_ex.Controllers
             var response = Request["g-recaptcha-response"];
             //secret that was generated in key value pair
 
-            const string secret = "";
+            const string secret = "6LduD5oUAAAAAD18yJfz_-358YH8oqxTrRLrZuP9";
             var client = new WebClient();
 
             var reply =

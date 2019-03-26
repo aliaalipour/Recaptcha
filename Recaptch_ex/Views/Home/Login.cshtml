@@ -24,14 +24,21 @@
     </div>
 
     <button type="submit" class="btn btn-primary">Submit</button>
+
+     
+        if(Model.Message==true)
+        {
+            <h1 class="text-success">کد کپچا با موفقیت در حال کار کردن است.</h1>
+        }
+    
 }
 
 
 
-<script src="https://www.google.com/recaptcha/api.js?render="></script>
+<script src="https://www.google.com/recaptcha/api.js?render=6LduD5oUAAAAAP-hfD06g_onrQvdJNfcOTo0UgIE"></script>
 <script>
     grecaptcha.ready(function () {
-        grecaptcha.execute('', { action: 'homepage' }).then(function (token) {
+        grecaptcha.execute('6LduD5oUAAAAAP-hfD06g_onrQvdJNfcOTo0UgIE', { action: 'homepage' }).then(function (token) {
             $("#recaptchaResponse").val(token);
         });
     });
